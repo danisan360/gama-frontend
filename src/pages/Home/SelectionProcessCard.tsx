@@ -1,7 +1,9 @@
 import React from 'react'
 import { format, isAfter } from 'date-fns'
+import { Link } from 'react-router-dom'
 
 interface Props {
+  id: number
   title: string
   deadline: Date
   contact: string
@@ -9,6 +11,7 @@ interface Props {
 }
 
 const SelectionProcessCard: React.FC<Props> = ({
+  id,
   title,
   deadline,
   contact,
@@ -33,6 +36,8 @@ const SelectionProcessCard: React.FC<Props> = ({
       </div>
       <div className="description-text">{description}</div>
       <div className="contact-text gray-text">Contato: {contact}</div>
+      <br />
+      <Link to={`/subscribe/${id}`}>Inscrever-se</Link>
     </div>
   )
 }

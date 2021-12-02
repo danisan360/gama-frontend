@@ -67,12 +67,6 @@ const ProcessesList: React.FC = () => {
                     >
                       <FontAwesomeIcon icon={faTrash} className="trash-icon" />
                     </Link>
-                    <Link
-                      to={`/subscribe/${item.id}`}
-                      style={{ marginLeft: '1rem' }}
-                    >
-                      Inscrever-se
-                    </Link>
                   </td>
                 </tr>
               ))}

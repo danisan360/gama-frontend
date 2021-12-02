@@ -30,6 +30,7 @@ const Home: React.FC = () => {
       return processesListSorted.map(item => (
         <SelectionProcessCard
           key={item.id}
+          id={item.id}
           title={item.title}
           deadline={item.deadline}
           contact={item.contact}
