@@ -53,7 +53,9 @@ const ProcessesList: React.FC = () => {
             <tbody>
               {processesList.map(item => (
                 <tr className="sp-table-row" key={item.id}>
-                  <td>{item.title}</td>
+                  <Link to={`/enrollments/${item.id}`}>
+                    <td>{item.title}</td>
+                  </Link>
                   <td>{format(item.deadline, 'dd/MM/yyyy')}</td>
                   <td>{item.contact}</td>
                   <td style={{ display: 'flex' }}>
