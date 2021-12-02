@@ -10,7 +10,7 @@
     "axios": "^0.21.1",
     "bulma": "^0.9.2",
     "date-fns": "^2.21.3",
-    "formik": "^2.2.6",
+    "formik": "^2.2.9",
     "jwt-decode": "^3.1.2",
     "react": "^17.0.1",
     "react-bulma-components": "^4.0.3",

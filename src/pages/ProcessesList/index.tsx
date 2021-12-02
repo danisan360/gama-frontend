@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Button } from 'react-bulma-components'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faTrash, faList } from '@fortawesome/free-solid-svg-icons'
 import { format } from 'date-fns'
 import { toast } from 'react-toastify'
 
@@ -64,6 +64,12 @@ const ProcessesList: React.FC = () => {
                       }}
                     >
                       <FontAwesomeIcon icon={faTrash} className="trash-icon" />
+                    </Link>
+                    <Link
+                      to={`/subscribe/${item.id}`}
+                      style={{ marginLeft: '1rem' }}
+                    >
+                      Inscrever-se
                     </Link>
                   </td>
                 </tr>

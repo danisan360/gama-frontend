@@ -14,6 +14,7 @@ import { AuthState } from '../contexts/auth/types'
 import Splash from '../components/Splash'
 
 import ProcessesRoutes from './ProcessesRoutes'
+import Subscribe from '../pages/Subscribe'
 
 const Routes: React.FC = () => {
   const { state: authState, loadToken } = useAuth()
@@ -29,6 +30,7 @@ const Routes: React.FC = () => {
     <Router>
       <Switch>
         <PublicRoute path="/" exact component={Home} />
+        <PublicRoute path="/subscribe/:id" exact component={Subscribe} />
         <ProtectedRoute path="/login" component={Login} />
         <ProtectedRoute path="/login2fa" component={Login2FA} />
         <ProtectedRoute path="/register" component={Register} />
