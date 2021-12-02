@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Button } from 'react-bulma-components'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { format } from 'date-fns'
 import { toast } from 'react-toastify'
 
@@ -57,9 +57,6 @@ const ProcessesList: React.FC = () => {
                   <td>{format(item.deadline, 'dd/MM/yyyy')}</td>
                   <td>{item.contact}</td>
                   <td style={{ display: 'flex' }}>
-                    <Link to={`/processes/${item.id}/edit`}>
-                      <FontAwesomeIcon icon={faPen} className="edit-icon" />
-                    </Link>
                     <Link
                       to="/processes"
                       onClick={() => {
