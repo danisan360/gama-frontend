@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import React from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory, useParams } from 'react-router-dom'
 import { Form, Button, Icon } from 'react-bulma-components'
 import { useFormik } from 'formik'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -11,7 +11,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { toast } from 'react-toastify'
 import * as Yup from 'yup'
-import { useParams } from 'react-router-dom'
 
 import useSubscribe from '../../hooks/useSubscribe'
 
