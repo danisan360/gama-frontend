@@ -27,10 +27,7 @@ const EnrollmentList: React.FC = (props: any) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  useEffect(() => {
-    console.log('procccc')
-    console.log(enrollmentList)
-  }, [enrollmentList])
+  useEffect(() => {}, [enrollmentList])
   const getProcessesList = () => {
     if (isFetching) {
       return <div className="not-found title">Carregando...</div>
