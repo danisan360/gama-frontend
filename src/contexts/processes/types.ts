@@ -42,6 +42,8 @@ export interface ProcessesContextData {
   firstProcess?: Process
 
   getAllProcesses: () => Promise<void>
+  getEnrollmentList: (processId: string) => Promise<void>
+  enrollmentList: object
   getProcessesByContractor: (contractorId: number) => Promise<void>
   getProcessById: (id: number) => Promise<void>
   createProcess: (

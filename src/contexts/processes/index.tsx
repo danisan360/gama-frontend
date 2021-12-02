@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 import React, { createContext, useCallback, useState, useMemo } from 'react'
 import { parse, format } from 'date-fns'
 
@@ -20,6 +22,7 @@ const ProcessesContext = createContext<ProcessesContextData>(
 export const ProcessesProvider: React.FC = ({ children }) => {
   const [processes, setProcesses] = useState<Process[]>([])
   const [isFetching, setFetching] = useState(false)
+  const [enrollmentList, setEnrollmentList] = useState({})
 
   const mapProcess = process => ({
     id: process.id,
@@ -40,6 +43,17 @@ export const ProcessesProvider: React.FC = ({ children }) => {
 
     setFetching(false)
   }, [])
+
+  const getEnrollmentList = useCallback(
+    async (processId: string) => {
+      const selective_process_id = processId
+      const response = await api.put('/subscriber', { selective_process_id })
+      console.log('ENROLLMENT', processId)
+      console.log(response.data)
+      setEnrollmentList({ ...enrollmentList, [processId]: response.data })
+    },
+    [enrollmentList],
+  )
 
   const getProcessesByContractor = useCallback(async (contractorId: number) => {
     setFetching(true)
@@ -128,6 +142,8 @@ export const ProcessesProvider: React.FC = ({ children }) => {
         processesList,
         firstProcess,
         getAllProcesses,
+        getEnrollmentList,
+        enrollmentList,
         getProcessesByContractor,
         getProcessById,
         createProcess,
